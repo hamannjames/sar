@@ -1,0 +1,297 @@
+#site-header {
+
+    @include vendor-prefix(box-shadow, (0 3px 10px #F0F0F0));
+    position:relative;
+    z-index:1000;
+
+    &.fixed {
+        position: fixed;
+        top:0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+    }
+
+    @include breakpointMax(sm) {
+        position:absolute;
+        top:0;
+        width:100%;
+        background:#fff;
+        z-index:1000;
+    }
+}
+
+#site-header-content {
+    width: 100%;
+    padding: 10px 30px;
+    position: relative;
+}
+
+#logo-container {
+    max-width: 55px;
+    display: inline-block;
+    margin-right: 1em;
+
+    @include breakpointMax(xs) {
+        max-width: 40px;
+    }
+}
+
+#site-nav {
+    display: inline-block;
+    vertical-align:top;
+    padding-top: 20px;
+    background:#fff;
+
+    @include breakpointMax(lg) {
+        display:none;
+        padding-top:20px;
+    }
+}
+
+#main-menu {
+    li {
+        display: inline-block;
+        padding: 0 1em;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $orangeHex;
+        font-size: .9em;
+        @include vendor-prefix(transition, (all ease .3s));
+
+        &:hover {
+            color: $darkOrangeHex;
+        }
+
+        &:last-child {
+            padding-right:0;
+        }
+
+        @include breakpointMax(lg) {
+            display:block;
+            text-align:center;
+            font-size:1em;
+            padding:1em 0;
+        }
+    }
+}
+
+#social-box {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    padding-right: 30px;
+
+    & > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    @include breakpointMax(lg) {
+        top: 14px;
+        right: 195px;
+        @include vendor-prefix(transform, (translateX(50%)));
+    }
+
+    @include breakpointMax(sm) {
+        right: 120px;
+    }
+
+    @include breakpointMax(xs) {
+        top:17px;
+    }
+}
+
+#social-menu {
+    li {
+        display: inline-block;
+        padding-right: 10px;
+        vertical-align: middle;
+
+        a {
+            img {
+                max-height: 25px;
+            }
+        }
+    }
+}
+
+#search-button {
+    padding: 1.6em;
+    border: 2px solid $greenHex;
+    position:relative;
+    cursor: pointer;
+    @include vendor-prefix(border-radius, .8em);
+    @include vendor-prefix(transition, (all ease .3s));
+
+    @include breakpointMin(sm) {
+        &:hover {
+            background-color: $greenHex;
+        }
+    }
+
+    img {
+        max-height: 1.5em;
+
+        &#search-green {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include vendor-prefix(transform, (translate(-50%, -50%)));
+        }
+
+        &#search-white {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include vendor-prefix(transform, (translate(-50%, -50%)));
+            display:none;
+        }
+    }
+}
+
+#donate-button {
+    margin-left: 10px;
+    padding: .7em 1em .6em 1em;
+    background-color: $orangeHex;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    @include vendor-prefix(border-radius, 10px);
+    font-family: 'Teko', sans-serif;
+    @include vendor-prefix(transition, (all ease .3s));
+
+    &:hover {
+        background-color: $darkOrangeHex;
+    }
+
+    @include breakpointMax(sm) {
+        display:none;
+    }
+}
+
+#searchform {
+    padding: 0px;
+    position: absolute;
+    opacity:0;
+    right:30px;
+    bottom:-45px;
+    @include vendor-prefix(transition, (all ease .3s));
+    @include vendor-prefix(transform, scaleX(0));
+
+    &.bring-in {
+        opacity:1;
+        @include vendor-prefix(transform, scaleX(1));
+    }
+}
+
+#search-input {
+    width: 400px;
+    border: 2px solid #567355;
+    background-color: $greenHex;
+    padding:.45em;
+    color:#fff;
+
+    &::-ms-clear {
+        display: none;
+    }
+
+    &::-webkit-input-placeholder {
+        color:#fff;
+    }
+
+    &::moz-placeholder {
+        color:#fff;
+    }
+
+    &:ms-placeholder {
+        color:#fff;
+    }
+
+    @include breakpointMax(xs) {
+        width: 220px;
+    }
+}
+
+#search-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: .5em;
+
+    @include breakpointMax(sm) {
+        padding: .35em;
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
+        top:2px;
+    }
+}
+
+#menu-button {
+    display: none;
+    width: 3em;
+    height: 3em;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    @include vendor-prefix(transition, (all ease .3s));
+    @include vendor-prefix(transform, (rotate(0deg)));
+    top:13px;
+
+    @include breakpointMax(lg) {
+        display:block;
+    }
+
+    @include breakpointMax(xs) {
+        top:8px;
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        height: .3em;
+        width: 100%;
+        background: $orangeHex;
+        opacity: 1;
+        left: 0;
+        @include vendor-prefix(transition, (all ease .3s));
+        @include vendor-prefix(transform, (rotate(0deg)));
+
+        &:nth-child(1) {
+            top: 0;
+            height:.31em;
+        }
+
+        &:nth-child(2) {
+            top: 1em;
+        }
+
+        &:nth-child(3) {
+            top: 2em;
+            @include breakpointMax(sm) {
+                height:.31em;
+            }
+        }
+    }
+
+    &.open {
+        span {
+            &:nth-child(1) {
+                top: 1em;
+                @include vendor-prefix(transform, (rotate(135deg)));
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+                left: -60px;
+            }
+
+            &:nth-child(3) {
+                top: 1em;
+                @include vendor-prefix(transform, rotate(-135deg));
+            }
+        }
+    }
+}

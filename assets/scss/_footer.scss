@@ -1,0 +1,144 @@
+#footer-container {
+    padding: 4em;
+    position: relative;
+    background-color: #f4f4f4;
+    color: $greenHex;
+    @include breakpointMin(md) {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+    }
+
+    @include breakpointMax(lg) {
+        font-size:.9em;
+        padding: 4em 3em;
+    }
+
+    @include breakpointMax(xs) {
+        font-size:1em;
+    }
+
+    h3 {
+        text-transform:uppercase;
+    }
+
+    .col {
+        &:nth-child(3) {
+            span {
+                display:block;
+
+                &.small-text {
+                    &:first-child {
+                        padding-top: 4em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#footer-logo {
+    img {
+        padding: 0 1em;
+    }
+}
+
+.footer-column {
+    padding: 0 1em;
+
+    @include breakpointMin(md) {
+        &:not(:last-child) {
+            border-right: 1px solid $greenHex;
+        }
+    }
+
+    @include breakpointMax(md) {
+        &:not(:first-child) {
+            padding-top: 3em;
+        }
+
+        &:not(:last-child) {
+            border-bottom: solid 1px $greenHex;
+        }
+    }
+
+    &:first-child {
+        text-align:center;
+    }
+}
+
+.footer-title {
+    font-family: Teko, sans-serif;
+    font-size: 2em;
+    line-height: .8em;
+    padding-bottom: 1em;
+
+    .light {
+        font-size: .71em;
+    }
+
+    .big {
+        font-size: 1.14em;
+    }
+
+    @media screen and (max-width: 1150px) and (min-width: 993px) {
+        .light {
+            font-size: .52em;
+        }
+
+        .big {
+            font-size: .85em;
+        }
+    }
+}
+
+#footer-logo {
+    padding-bottom: 2em;
+}
+
+#privacy-link {
+    font-weight:bold;
+    padding-bottom: 1em;
+    display: block;
+}
+
+.footer-button {
+    @extend .post-item-button;
+    margin-top: 1em !important;
+    margin-bottom: 1.1em;
+}
+
+.footer-signup-container {
+    position:relative;
+}
+
+.footer-signup {
+    @extend .callout-signup;
+    padding: .7em 1em !important;
+}
+
+.footer-submit {
+    @extend .callout-submit;
+    right:0 !important;
+}
+
+.address,
+.phone,
+.email {
+    padding: 1em 0;
+}
+
+.phone {
+    a {
+        color: $greenHex;
+        text-decoration:none;
+    }
+}
+
+#copyright {
+    text-align: center;
+    color: $greenHex;
+    padding: 1em;
+    font-size:.8em;
+}

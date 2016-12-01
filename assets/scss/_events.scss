@@ -1,0 +1,48 @@
+.event-excerpt {
+    padding: 3em;
+    text-align: left;
+    background-color: #fff;
+    color: #565656;
+}
+
+.event-meta {
+    padding-bottom:3em;
+}
+
+.event-title {
+    font-size: 1.7em;
+    color: $greenHex;
+    text-transform: uppercase;
+    padding-bottom: .4em;
+
+    a {
+        @extend %funkyLink;
+
+        &:after {
+            background: $greenHex !important;
+            bottom: 10px !important;
+        }
+    }
+}
+
+.event-date {
+    font-size:1.05em;
+}
+
+.event-link {
+    text-transform: uppercase;
+    padding: 3em 0 1em 0;
+    display: inline-block;
+    color: $orangeHex;
+    font-weight: bold;
+
+    @extend %funkyLink;
+}
+
+.event-callout {
+    padding-top: 4em;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 2em;
+    font-size: 1.5em;
+}

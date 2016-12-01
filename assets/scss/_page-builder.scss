@@ -1,0 +1,231 @@
+.button-wrapper {
+    padding: 0 30px;
+
+    @include breakpointMax(xs) {
+        padding:0;
+    }
+}
+
+.button-text {
+    padding: 50px;
+    background-color: $orangeHex;
+    color: #fff;
+    font-size: 1.1em;
+    @include vendor-prefix(border-radius, (10px 10px 0 0));
+}
+
+.button-section {
+    text-transform:uppercase;
+    display: block;
+    line-height:1em;
+    padding: 30px 50px;
+    background-color: $darkOrangeHex;
+    color: #fff;
+    font-size: 2.6em;
+    font-weight: bold;
+    font-family: 'Teko', sans-serif;
+    @include vendor-prefix(border-radius, (0 0 10px 10px));
+    @include vendor-prefix(transition, (all ease .3s));
+
+    &:hover {
+        background-color: $darkerOrange;
+    }
+}
+
+.callout-section {
+    font-family: 'Teko', sans-serif;
+
+    .col {
+        font-size: 1.8em;
+    }
+}
+
+.signup-container {
+    padding: 0 30px;
+    position: relative;
+
+    ::-webkit-input-placeholder { color: $greenHex; opacity: 1 !important; }
+    :-moz-placeholder { color: $greenHex;}
+    ::-moz-placeholder {color: $greenHex;}
+    :-ms-input-placeholder {color: $greenHex;}
+}
+
+.callout-signup {
+    color: $greenHex;
+    font-size: .8em;
+    width: 100%;
+    padding: .3em .5em;
+    @include vendor-prefix(border-radius, (10px));
+}
+
+.callout-submit {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    height: 100%;
+    background-color: $orangeHex;
+    padding: 10px;
+    @include vendor-prefix(border-radius, (0 10px 10px 0));
+}
+
+.callout-hr {
+    position: absolute;
+    top: 0;
+    width: 65%;
+    left: 50%;
+    @include vendor-prefix(transform, (translateX(-50%)));
+}
+
+.story-content {
+    height: 28em;
+    display: block;
+    background: #ffffff;
+    box-shadow: inset 0 0 5px #d3d3d3;
+    -moz-box-shadow: inset 0 0 5px #d3d3d3;
+    -webkit-box-shadow: inset 0 0 5px #d3d3d3;
+
+    .story-item {
+        margin:0 4em;
+        padding:0;
+        height: 20em;
+        position: relative;
+        top: 4em;
+        overflow-y: auto;
+        background-color: #fff;
+        box-shadow:none;
+    }
+}
+
+.post-item-content {
+    height: 28em;
+    display: block;
+    background: #ffffff;
+    box-shadow: inset 0 0 5px #d3d3d3;
+    -moz-box-shadow: inset 0 0 5px #d3d3d3;
+    -webkit-box-shadow: inset 0 0 5px #d3d3d3;
+
+    .post-item {
+        margin:0 4em;
+        padding:0;
+        height: 20em;
+        position: relative;
+        top: 4em;
+        overflow-y: auto;
+        background-color: #fff;
+        box-shadow:none;
+    }
+}
+
+.story-item {
+    padding: 4em;
+    height: 28em;
+    overflow-y: scroll;
+    background-color: #fff;
+    -moz-box-shadow:    inset 0 0 5px #d3d3d3;
+    -webkit-box-shadow: inset 0 0 5px #d3d3d3;
+    box-shadow:         inset 0 0 5px #d3d3d3;
+}
+
+.story-author {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    font-family: 'Teko', sans-serif;
+    color: $greenHex;
+}
+
+.story-text {
+    padding-top: 2em;
+}
+
+.post-item {
+    @extend .story-item;
+    overflow: inherit;
+}
+
+.post-item-title {
+    @extend .story-author;
+}
+
+.post-item-text {
+    @extend .story-text;
+}
+
+.post-item-button {
+    display: inline-block;
+    margin-top: 1.6em;
+    color: $orangeHex;
+    font-size:2em;
+    padding: .6em 1em .5em 1em;
+    font-family: 'Teko', sans-serif;
+    font-weight: bold;
+    border: 1px solid $orangeHex;
+    text-transform: uppercase;
+    @include vendor-prefix(border-radius, (10px));
+    @include vendor-prefix(transition, (all, ease, .3s));
+
+    &:hover {
+        background-color: $orangeHex;
+        color: #fff;
+    }
+}
+
+.icon-container {
+    display: inline-block;
+    width: 150px;
+    vertical-align: top;
+    padding-right: 10px;
+
+    &:last-child {
+        padding-right:0;
+        width: 140px;
+    }
+
+    @include breakpointMax(xs) {
+        padding-right: 0;
+
+        &:not(:last-child) {
+            padding-bottom:2em;
+        }
+    }
+}
+
+.icon-box {
+    height: 140px;
+    position: relative;
+    border: 2px solid #f4f4f4;
+    margin-bottom: 20px;
+    @include vendor-prefix(transition, (all, ease, .3s));
+
+    &:hover {
+        border: 2px solid $greenHex;
+    }
+
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        max-width: 100px;
+        @include vendor-prefix(transform, (translate(-50%, -50%)));
+    }
+}
+
+.icon-label {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: $orangeHex;
+
+    a {
+        @extend %funkyLinkBefore;
+        display:inline-block;
+    }
+}
+
+.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color:#fff !important;
+    border: 1px solid #565656 !important;
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+    width: 4px !important;
+}

@@ -1,0 +1,50 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    color: #565656;
+
+    @include breakpointMax(sm) {
+        font-size: 80%;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.3em;
+}
+
+ol {
+    text-align:left;
+
+    li {
+        display: list-item;
+        margin-left: 1em;
+    }
+}
+
+#site-wrapper {
+    @include breakpointMax(sm) {
+        padding-top: 40px;
+    }
+
+    @include breakpointMax(xs) {
+        padding-top: 20px;
+    }
+
+    @include breakpointMax(ss) {
+        padding-top: 60px;
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) {
+        padding-top:100px;
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 320px) {
+        padding-top:60px;
+    }
+}

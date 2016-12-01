@@ -1,0 +1,42 @@
+.wpcf7 {
+    max-width:600px;
+    margin:0 auto !important;
+    padding-top:2em !important;
+
+    p {
+        &:not(:last-child) {
+            padding-bottom: 1em;
+        }
+    }
+
+    input:not([type="submit"]), textarea {
+        width:100%;
+        width: 100%;
+        padding: .3em;
+        background: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        @include vendor-prefix(transition, (all ease .3s));
+        @include vendor-prefix(border-radius, 5px);
+
+        &:focus {
+            background:#fff;
+            color:#000;
+        }
+    }
+
+    input[type = "submit"] {
+        color:#fff;
+        background-color:$darkOrangeHex;
+        padding:.3em 1em .2em 1em;
+        font-family:'Teko', sans-serif;
+        font-size:2em;
+        cursor: pointer;
+        @include vendor-prefix(transition, (all ease .3s));
+        @include vendor-prefix(border-radius, 10px);
+
+        &:hover {
+            background-color: $orangeHex;
+        }
+    }
+}
